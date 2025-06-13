@@ -32,6 +32,9 @@ st.markdown("---")
 
 col1, col2 = st.columns(2)
 
+# Replace local backend with deployed backend URL
+API_BASE = "https://afta-assessment-6.onrender.com"
+
 with col1:
     st.header("Salary Advance")
     
@@ -50,7 +53,7 @@ with col1:
             st.warning("Please fill in gross salary and advance correctly.")
         else:
             try:
-                res = requests.post("http://backend:8000/calculate_advance", json={
+                res = requests.post(f"{API_BASE}/calculate_advance", json={
                     "gross_salary": gross_salary,
                     "pay_frequency": pay_frequency.lower(),
                     "requested_advance": requested_advance
@@ -79,7 +82,7 @@ with col2:
             st.warning("Please enter valid loan details.")
         else:
             try:
-                res = requests.post("http://backend:8000/calculate_loan", json={
+                res = requests.post(f"{API_BASE}/calculate_loan", json={
                     "name": name,
                     "user_id": user_id,
                     "loan_amount": loan_amount,
@@ -121,7 +124,7 @@ st.markdown("---")
 st.header("All Saved Loan Records")
 
 try:
-    res = requests.get("http://backend:8000/loan_records")
+    res = requests.get(f"{API_BASE}/loan_records")
     res.raise_for_status()
     records = res.json()
 
