@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+*.sqlite3
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# macOS
+.DS_Store
+
+# Streamlit cache and folders
+.streamlit/
+
+# Compiled files
+*.pyc
+*.pkl
+*.db
+
+# dotenv and sensitive info
+.env
+.env.*
+
+# Local development files
+*.bak
+*.swp
+
+# Docker
+**/Dockerfile
+**/docker-compose.yml
+**/docker-compose.override.yml
+
+# CSV/Reports generated for download
+*.csv
+*.xlsx
+
+# MyPy and Pylint
+.mypy_cache/
+.dmypy.json
+.pytype/
+pylint-report.txt
+
+# FastAPI
+*.db-journal
